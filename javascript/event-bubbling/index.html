@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubbling</title>
+    <style>
+        body * {
+            margin: 10px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!--<form onclick="alert('form')">Form
+        <div onclick="alert('div')">Div
+            <p onclick="alert('p')">P</p>  핸들러 때문에 p,div,form 순서로 진행-->
+
+        <form>Form
+        <div>Div
+            <p>P</p>
+        </div>
+        </form>
+        </div>
+    </form>
+    <script>
+        const form = document.querySelector('form');
+        const div = document.querySelector('div');
+        const p = document.querySelector('p');
+
+        form.onclick= function(evt) {
+            event.target.style.backgroundColor = 'yellow';
+        }
+    </script>
+</body>
+</html>
